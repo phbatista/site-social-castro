@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salário Líquido - Social Castro</title>
+    <link rel="icon" href="../logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- LOGO -->
+            <a href="/index.html">
+                <img src="./logo.png" alt="Logo Social Castro" class="h-12">
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#services" class="text-gray-600 hover:text-red-600 nav-link">Soluções</a>
+                <a href="index.html#why-us" class="text-gray-600 hover:text-red-600 nav-link">Vantagens</a>
+                <a href="index.html#testimonials" class="text-gray-600 hover:text-red-600 nav-link">Depoimentos</a>
+                <a href="index.html#contact" class="text-gray-600 hover:text-red-600 nav-link">Contato</a>
+                <a href="index.htmlferramentas.html" class="text-gray-600 hover:text-red-600 nav-link">Ferramentas</a>
+            </div>
+            <a href="index.html#contact" class="hidden md:block bg-red-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                Seja um Parceiro
+            </a>
+            <!-- Menu Mobile (Hambúrguer) -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="index.html#services" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Soluções</a>
+            <a href="index.html#why-us" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Vantagens</a>
+            <a href="index.html#testimonials" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Depoimentos</a>
+            <a href="index.html#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Contato</a>
+            <a href="ferramentas.html" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Ferramentas</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-2xl">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-inner">
+                    <h3 class="text-2xl font-bold text-center mb-6 text-red-600">Calculadora de Salário Líquido</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div><label for="gross-salary-net" class="font-semibold">Salário Bruto (R$)</label><input type="number" id="gross-salary-net" class="w-full mt-1 p-2 border rounded-lg" placeholder="3000.00"></div>
+                        <div><label for="dependents-net" class="font-semibold">Nº de Dependentes</label><input type="number" id="dependents-net" class="w-full mt-1 p-2 border rounded-lg" value="0"></div>
+                        <div><label for="other-discounts-net" class="font-semibold">Outros Descontos (R$)</label><input type="number" id="other-discounts-net" class="w-full mt-1 p-2 border rounded-lg" placeholder="150.00"></div>
+                    </div>
+                    <button id="calculate-net-salary" class="w-full bg-red-600 text-white py-2 px-4 rounded-lg font-bold hover:bg-red-700">Calcular</button>
+                    <div id="net-salary-result" class="mt-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-r-lg hidden"></div>
+                </div>
+                 <div class="text-center mt-8">
+                    <a href="../ferramentas.html" class="text-red-600 hover:underline font-semibold">← Voltar para todas as ferramentas</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300">
+        </footer>
+
+    <script src="../script.js" defer></script>
+    <script src="calc-salario.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* Estilo para usar a fonte Inter do Google Fonts */
+body { 
+    font-family: 'Inter', sans-serif; 
+}
+
+/* Efeito de sublinhado animado para os links do menu de navegação */
+.nav-link { 
+    position: relative; 
+    transition: color 0.3s ease; 
+}
+.nav-link::after { 
+    content: ''; 
+    position: absolute; 
+    width: 0; 
+    height: 2px; 
+    bottom: -4px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: #ef4444; /* Cor do sublinhado (vermelho) */
+    transition: width 0.3s ease; 
+}
+.nav-link:hover::after { 
+    width: 100%; 
+}
+
+/* Estilos para o botão flutuante do WhatsApp */
+.whatsapp-button { 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #25D366; 
+    color: white; 
+    border-radius: 50%; 
+    width: 60px; 
+    height: 60px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); 
+    z-index: 1000; 
+    transition: transform 0.3s ease; 
+}
+.whatsapp-button:hover { 
+    transform: scale(1.1); 
+}
+
+/* Estilos para a animação da seção de Perguntas Frequentes (FAQ) */
+.faq-answer { 
+    transition: max-height 0.3s ease-out; 
+    overflow: hidden; 
+    max-height: 0; 
+}
+.faq-answer.open { 
+    max-height: 200px; /* Altura suficiente para a resposta. Ajuste se necessário. */
+}
+
+/* ESTILOS PARA OS CARDS INFORMATIVOS DAS FERRAMENTAS */
+.calculator-card-link {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 0.75rem; /* Adicionado para a sombra seguir a borda */
+}
+
+.calculator-card-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.calculator-card {
+    background-color: #f9fafb; /* bg-gray-50 */
+    border: 1px solid #e5e7eb; /* border-gray-200 */
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 1.5rem; /* p-6 */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.card-title {
+    color: #991b1b; /* text-red-800 */
+    font-weight: 600; /* font-semibold */
+    font-size: 1.125rem; /* text-lg */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.card-description {
+    color: #4b5563; /* text-gray-600 */
+    font-size: 0.875rem; /* text-sm */
+    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+}
+
+.card-button {
+    background-color: #ef4444; /* bg-red-500 */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* rounded-lg */
+    text-align: center;
+    margin-top: 1rem; /* mt-4 */
+    font-weight: 600; /* font-semibold */
+    transition: background-color 0.2s;
+}
+
+.calculator-card-link:hover .card-button {
+    background-color: #dc2626; /* bg-red-600 */
+}
+
+/* ... (todos os estilos anteriores permanecem aqui) ... */
+
+/* NOVOS ESTILOS PARA INPUTS COM PREFIXO DE MOEDA */
+.input-group {
+    position: relative;
+}
+
+.input-prefix {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding: 0 0.75rem; /* 12px */
+    display: flex;
+    align-items: center;
+    color: #6b7280; /* text-gray-500 */
+    font-weight: 600;
+    border-right: 1px solid #d1d5db; /* border-gray-300 */
+    background-color: #f3f4f6; /* bg-gray-100 */
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.5rem 0.75rem 0.5rem 4rem; /* Padding esquerdo para não sobrepor o prefixo */
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 0.5rem; /* rounded-lg */
+}
+
+.input-field-full {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+}

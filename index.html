@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Castro | Folha de Pagamento para Administradoras</title>
+    <meta name="description" content="A parceria especialista em folha de pagamento para administradoras de condomínios. Otimize sua operação e reduza custos.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (ícone da aba do navegador) com a nova logo -->
+    <link rel="icon" href="./logo.png" type="image/png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- LOGO -->
+            <a href="index.html">
+                <img src="./logo.png" alt="Logo Social Castro" class="h-12">
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="text-gray-600 hover:text-red-600 nav-link">Soluções</a>
+                <a href="#why-us" class="text-gray-600 hover:text-red-600 nav-link">Vantagens</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-red-600 nav-link">Depoimentos</a>
+                <a href="#contact" class="text-gray-600 hover:text-red-600 nav-link">Contato</a>
+                <a href="ferramentas.html" class="text-gray-600 hover:text-red-600 nav-link">Ferramentas</a>
+            </div>
+            <a href="#contact" class="hidden md:block bg-red-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                Seja um Parceiro
+            </a>
+            <!-- Menu Mobile (Hambúrguer) -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#services" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Soluções</a>
+            <a href="#why-us" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Vantagens</a>
+            <a href="#testimonials" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Depoimentos</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Contato</a>
+            <a href="ferramentas.html" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Ferramentas</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Principal (Hero) -->
+        <section id="home" class="bg-white">
+            <div class="container mx-auto px-6 py-24 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                    Otimize sua Operação: <span class="text-red-600">Terceirize a Folha de Pagamento.</span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Somos especialistas em folha de pagamento para administradoras de condomínios. Foque na gestão dos seus clientes, que nós cuidamos da burocracia.
+                </p>
+                <div class="mt-10">
+                    <a href="#contact" class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-all transform hover:scale-105">
+                        Conheça as Vantagens
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Serviços -->
+        <section id="services" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nossas Soluções para Administradoras</h2>
+                    <p class="mt-4 text-gray-600">Oferecemos um serviço completo de BPO (Business Process Outsourcing) para sua folha de pagamento.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-red-100 text-red-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Processamento de Folha</h3>
+                        <p class="text-gray-600">Cálculo de salários, férias, 13º, adiantamentos e rescisões dos funcionários alocados nos condomínios.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-red-100 text-red-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Gestão de Encargos e eSocial</h3>
+                        <p class="text-gray-600">Emissão de guias (INSS, FGTS, IRRF) e gerenciamento completo das obrigações no eSocial.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-red-100 text-red-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Relatórios Gerenciais</h3>
+                        <p class="text-gray-600">Fornecemos todos os relatórios necessários para você apresentar ao seu cliente (o síndico) com clareza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Sobre Nós -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <!-- SUGESTÃO: Substitua este placeholder pela foto da sua mãe -->
+                    <img src="https://placehold.co/600x400/fee2e2/991b1b?text=Foto+da+Fundadora" alt="Fundadora da Social Castro" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Sua parceira estratégica em Departamento Pessoal</h2>
+                    <p class="mt-6 text-gray-600">A Social Castro nasceu para ser o braço direito das administradoras de condomínios. Entendemos que a folha de pagamento é uma área complexa e que consome tempo. Nossa missão é assumir essa responsabilidade com máxima eficiência.</p>
+                    <p class="mt-4 text-gray-600">Com nossa expertise, sua administradora ganha tempo para focar na prospecção de novos clientes e na excelência do atendimento, enquanto garantimos total conformidade legal e fiscal.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Diferenciais (Vantagens) -->
+        <section id="why-us" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Vantagens de ser um Parceiro Social Castro</h2>
+                    <p class="mt-4 text-gray-600">Veja como podemos impulsionar o crescimento da sua administradora.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-bold mb-2">Redução de Custos</h3>
+                        <p class="text-gray-600">Elimine os custos de manter uma equipe interna de DP e softwares especializados. Pague apenas pelo serviço.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-bold mb-2">Mitigação de Riscos</h3>
+                        <p class="text-gray-600">Nossa equipe especialista está sempre atualizada, evitando erros e passivos trabalhistas para sua empresa.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-bold mb-2">Foco no seu Core Business</h3>
+                        <p class="text-gray-600">Libere seu tempo e energia da burocracia para focar na gestão de condomínios e no crescimento da sua carteira.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO Depoimentos -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">O que nossos parceiros dizem</h2>
+                    <p class="mt-4 text-gray-600">A confiança de quem já otimizou a operação conosco.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Depoimento 1 (Exemplo) -->
+                    <div class="bg-gray-100 p-8 rounded-xl">
+                        <p class="text-gray-700 italic">"A parceria com a Social Castro foi um divisor de águas. Ganhamos tempo, reduzimos erros e agora conseguimos focar 100% no atendimento aos nossos síndicos. Recomendo fortemente!"</p>
+                        <div class="mt-4 text-right">
+                            <p class="font-bold text-red-600">João da Silva</p>
+                            <p class="text-sm text-gray-500">Diretor, Administradora Exemplo Ltda.</p>
+                        </div>
+                    </div>
+                    <!-- Depoimento 2 (Exemplo) -->
+                    <div class="bg-gray-100 p-8 rounded-xl">
+                        <p class="text-gray-700 italic">"Tínhamos receio de terceirizar a folha, mas a equipe da Social Castro é extremamente competente e organizada. A transição foi tranquila e hoje temos muito mais segurança nos processos."</p>
+                        <div class="mt-4 text-right">
+                            <p class="font-bold text-red-600">Maria Oliveira</p>
+                            <p class="text-sm text-gray-500">Gerente, Gestão Condominial ABC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO Perguntas Frequentes (FAQ) -->
+        <section id="faq" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Perguntas Frequentes</h2>
+                    <p class="mt-4 text-gray-600">Tirando suas principais dúvidas sobre a parceria.</p>
+                </div>
+                <div class="max-w-3xl mx-auto divide-y divide-gray-300">
+                    <!-- Pergunta 1 -->
+                    <div class="py-4">
+                        <button class="faq-question w-full flex justify-between items-center text-left">
+                            <span class="font-bold text-lg text-gray-800">Como funciona o processo de envio e recebimento de dados?</span>
+                            <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer mt-2">
+                            <p class="text-gray-600">O processo é simples e digital. Definimos um canal seguro (e-mail, sistema compartilhado) para o envio das informações mensais (admissões, demissões, férias, atestados). Nós processamos tudo e devolvemos os relatórios e guias prontos para pagamento.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 2 -->
+                    <div class="py-4">
+                        <button class="faq-question w-full flex justify-between items-center text-left">
+                            <span class="font-bold text-lg text-gray-800">Quais são os custos envolvidos? O serviço é caro?</span>
+                            <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer mt-2">
+                             <p class="text-gray-600">Nosso custo é baseado no número de funcionários processados, o que geralmente representa uma economia significativa em comparação aos custos de manter um funcionário de DP interno, além de licenças de software e treinamentos.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 3 -->
+                    <div class="py-4">
+                        <button class="faq-question w-full flex justify-between items-center text-left">
+                            <span class="font-bold text-lg text-gray-800">Minha administradora fica segura ao terceirizar a folha?</span>
+                            <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer mt-2">
+                           <p class="text-gray-600">Totalmente. Operamos com um contrato de prestação de serviços que detalha todas as responsabilidades e garante a confidencialidade das informações. Além disso, nossa especialização minimiza os riscos de erros e passivos trabalhistas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contact" class="py-20 bg-red-800 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Vamos firmar uma parceria de sucesso?</h2>
+                    <p class="mt-4 text-red-200 max-w-2xl mx-auto">Entre em contato para entendermos suas necessidades e apresentarmos uma proposta de terceirização que fará sua administradora crescer.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white text-gray-800 rounded-xl shadow-2xl p-8 md:p-12">
+                    <form action="https://formspree.io/f/meokbrzl" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="font-semibold">Seu Nome</label>
+                                <input type="text" id="name" name="name" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                            </div>
+                            <div>
+                                <label for="company_name" class="font-semibold">Nome da Administradora</label>
+                                <input type="text" id="company_name" name="administradora" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            </div>
+                            <div>
+                                <label for="email" class="font-semibold">Seu E-mail</label>
+                                <input type="email" name="email" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="font-semibold">Telefone / WhatsApp</label>
+                                <input type="tel" name="phone" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="message" class="font-semibold">Mensagem (Ex: nº de condomínios, funcionários, etc.)</label>
+                                <textarea id="message" name="message" rows="4" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required></textarea>
+                            </div>
+                        </div>
+                        <div class="text-center mt-8">
+                            <button type="submit" class="bg-red-600 text-white px-10 py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors">
+                                Solicitar Proposta
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé ATUALIZADO COM MAPA -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="container mx-auto px-6 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- Coluna 1: Informações de Contato -->
+                <div class="lg:col-span-1">
+                    <h3 class="text-xl font-bold text-white mb-4">Social Castro</h3>
+                    <p class="text-gray-400 mb-4">A parceira especialista em folha de pagamento para sua administradora.</p>
+                    <h3 class="text-xl font-bold text-white mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:contato@socialcastro.adm.br" class="hover:text-red-400">contato@socialcastro.adm.br</a></li>
+                        <li><a href="tel:+5511956040505" class="hover:text-red-400">(11) 95604-0505</a></li>
+                        <li><a href="https://maps.app.goo.gl/SqLGijChvdSAWFRT9" target="_blank" class="hover:text-red-400">R. Cel. Cardoso de Siqueira, 1118 - Vila Oliveira, Mogi das Cruzes - SP, 08790-420</a></li>
+                    </ul>
+                </div>
+                <!-- Coluna 2: Mapa -->
+                <div class="lg:col-span-2">
+                     <h3 class="text-xl font-bold text-white mb-4">Nossa Localização</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.549999943232!2d-46.1851909237691!3d-23.47648995777611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce7a1f39155555%3A0x65a88241a465878a!2sR.%20Cel.%20Cardoso%20de%20Siqueira%2C%201118%20-%20Vila%20Oliveira%2C%20Mogi%20das%20Cruzes%20-%20SP%2C%2008790-420!5e0!3m2!1spt-BR!2sbr!4v1720478201732!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+                </div>
+            </div>
+            <div class="mt-10 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; <span id="year"></span> Social Castro. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/5511956040505?text=Olá!%20Vi%20o%20site%20da%20Social%20Castro%20e%20gostaria%20de%20mais%20informações." target="_blank" class="whatsapp-button" aria-label="Fale conosco pelo WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-8 h-8"><path fill="currentColor" d="M16.21,4.46C9.39,4.46,3.8,10.05,3.8,16.87c0,2.43,0.7,4.71,2,6.72l-2.14,7.8,8-2.09c2.02,1.21,4.3,1.86,6.69,1.86h0c6.82,0,12.41-5.59,12.41-12.41C28.62,10.05,23.03,4.46,16.21,4.46 M22.33,19.48c-0.34,0.95-1.34,1.64-2.61,1.82c-1.03,0.15-2.24,0.14-3.55-0.19c-1.8-0.46-3.4-1.36-4.78-2.73c-1.65-1.65-2.8-3.63-3.23-5.22c-0.3-1.08-0.29-2.22,0.19-3.25c0.38-0.81,1.17-1.34,2.02-1.5c0.23-0.04,0.48-0.06,0.72-0.06c0.32,0,0.61,0.06,0.86,0.1c0.36,0.06,0.58,0.1,0.77,0.48c0.21,0.4,0.22,0.89,0.22,0.96c0,0.41-0.04,0.79-0.08,1.1c-0.06,0.41-0.12,0.8-0.23,1.07c-0.18,0.43-0.41,0.76-0.69,1.02c-0.22,0.2-0.44,0.41-0.2,0.78c0.2,0.31,0.94,1.4,1.96,2.42c1.32,1.32,2.51,1.72,2.96,1.92c0.37,0.16,0.58,0.15,0.8-0.09c0.29-0.3,0.63-0.74,0.85-1.02c0.21-0.26,0.42-0.31,0.7-0.22c0.28,0.09,1.75,0.83,2.05,0.98c0.3,0.15,0.5,0.22,0.57,0.34C22.42,18.71,22.51,18.91,22.33,19.48"></path></svg>
+    </a>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

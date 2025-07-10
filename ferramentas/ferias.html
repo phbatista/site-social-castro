@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Férias - Social Castro</title>
+    <link rel="icon" href="../logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- O caminho para o CSS agora é "../style.css" pois está um nível acima -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <!-- Cole o mesmo <header> das outras páginas aqui -->
+    </header>
+
+    <main>
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="bg-gray-50 p-6 md:p-8 rounded-lg shadow-inner">
+                    <h3 class="text-2xl font-bold text-center mb-6 text-red-600">Calculadora de Férias Online</h3>
+                    
+                    <!-- Formulário da Calculadora -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                        <div>
+                            <label for="gross-salary-vacation" class="font-semibold text-sm">Salário bruto</label>
+                            <div class="input-group">
+                                <span class="input-prefix">R$</span>
+                                <input type="text" id="gross-salary-vacation" class="input-field" placeholder="0,00">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="extra-hours" class="font-semibold text-sm">Média de horas extras (se houver)</label>
+                            <div class="input-group">
+                                <span class="input-prefix">R$</span>
+                                <input type="text" id="extra-hours" class="input-field" placeholder="0,00">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="dependents-vacation" class="font-semibold text-sm">Número de dependentes</label>
+                            <input type="number" id="dependents-vacation" class="input-field-full" value="0">
+                        </div>
+                        <div>
+                            <label for="vacation-days" class="font-semibold text-sm">Dias de férias</label>
+                            <input type="number" id="vacation-days" class="input-field-full" value="30">
+                        </div>
+                        <div>
+                            <label for="sell-vacation" class="font-semibold text-sm">Abono pecuniário (vender férias)?</label>
+                            <select id="sell-vacation" class="input-field-full">
+                                <option value="nao">Não</option>
+                                <option value="sim">Sim, vender 1/3</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="advance-13th" class="font-semibold text-sm">Adiantar 1ª parcela 13º?</label>
+                            <select id="advance-13th" class="input-field-full">
+                                <option value="nao">Não</option>
+                                <option value="sim">Sim</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Botões -->
+                    <div class="flex items-center justify-center space-x-4">
+                        <button id="calculate-vacation" class="w-full md:w-auto bg-red-600 text-white py-3 px-10 rounded-lg font-bold hover:bg-red-700 transition-colors">Calcular</button>
+                        <button id="clear-vacation" class="w-full md:w-auto bg-gray-200 text-gray-700 py-3 px-10 rounded-lg font-bold hover:bg-gray-300 transition-colors">Limpar</button>
+                    </div>
+
+                    <!-- Área de Resultado -->
+                    <div id="vacation-result" class="mt-8 pt-6 border-t border-gray-200 hidden">
+                        <!-- O resultado será inserido aqui pelo JavaScript -->
+                    </div>
+                </div>
+                 <div class="text-center mt-8">
+                    <a href="../ferramentas.html" class="text-red-600 hover:underline font-semibold">← Voltar para todas as ferramentas</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300">
+        <!-- Cole o mesmo <footer> das outras páginas aqui -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../script.js" defer></script>
+    <script src="calc-ferias.js" defer></script>
+</body>
+</html>
