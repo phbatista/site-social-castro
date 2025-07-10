@@ -55,23 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const vacationBonus = vacationValue / 3;
             const grossVacation = vacationValue + vacationBonus;
 
-            // Abono Pecuniário (venda de 10 dias)
+            // Abono Pecuniário (venda de 1/3 das férias) é isento de impostos
             let cashBonus = 0;
             if (sellVacation) {
-                // O abono é 1/3 do salário + 1/3 sobre o abono
+                // O abono é 1/3 do salário + 1/3 sobre esse abono.
                 const bonusBase = calculationBase / 3;
                 cashBonus = bonusBase + (bonusBase / 3);
             }
 
-            // Adiantamento do 13º
+            // Adiantamento do 13º (também não incide impostos no adiantamento)
             let advance13thValue = 0;
             if (advance13th) {
-                // Considera o ano corrente para proporcionalidade
                 const currentMonth = new Date().getMonth() + 1;
                 advance13thValue = (calculationBase / 12 * currentMonth) / 2;
             }
 
-            // Descontos
+            // Descontos são calculados sobre o total bruto das férias
             const inss = calculateINSS(grossVacation);
             const irrf = calculateIRRF(grossVacation, dependents);
             const totalDiscounts = inss + irrf;
@@ -85,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Demonstrativo do Cálculo de Férias</h3>
                 <div class="space-y-3 text-gray-700">
                     <div class="p-4 bg-white rounded-lg shadow-sm">
-                        <p class="font-semibold">1. Base de Cálculo (Salário Bruto + Horas Extras)</p>
+                        <p class="font-semibold">1. Base de Cálculo (Salário Bruto + Média de H.E.)</p>
                         <p class="text-lg font-bold text-red-600">${formatCurrency(calculationBase)}</p>
                     </div>
                     <div class="p-4 bg-white rounded-lg shadow-sm">
@@ -98,15 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="p-4 bg-white rounded-lg shadow-sm">
                         <p class="font-semibold">4. Deduções (INSS e IRRF)</p>
-                        <p>INSS: ${formatCurrency(inss)}</p>
-                        <p>IRRF: ${formatCurrency(irrf)}</p>
+                        <p>INSS sobre Férias: ${formatCurrency(inss)}</p>
+                        <p>IRRF sobre Férias: ${formatCurrency(irrf)}</p>
                         <p class="font-bold">Total de Descontos: <span class="text-lg font-bold text-red-600">${formatCurrency(totalDiscounts)}</span></p>
                     </div>
                      ${(sellVacation || advance13th) ? `
                         <div class="p-4 bg-white rounded-lg shadow-sm">
                             <p class="font-semibold">5. Outros Vencimentos</p>
                             ${sellVacation ? `<p>Abono Pecuniário: ${formatCurrency(cashBonus)}</p>` : ''}
-                            ${advance13th ? `<p>Adiantamento 13º: ${formatCurrency(advance13thValue)}</p>` : ''}
+                            ${advance13th ? `<p>Adiantamento 13º Salário: ${formatCurrency(advance13thValue)}</p>` : ''}
                         </div>
                     ` : ''}
                     <div class="p-6 bg-red-50 rounded-lg text-center">
@@ -115,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="text-xs mt-2 text-gray-500">(${formatCurrency(grossVacation)} - ${formatCurrency(totalDiscounts)} + ${formatCurrency(cashBonus + advance13thValue)})</p>
                     </div>
                 </div>
-                <p class="text-xs text-center mt-4 text-gray-500">Lembre-se que esse resultado refere-se ao valor recebido para o tempo de férias solicitado. Os valores são estimativas.</p>
+                <p class="text-xs text-center mt-4 text-gray-500">Lembre-se que este resultado é uma estimativa e não substitui o holerite oficial.</p>
             `;
             resultDiv.classList.remove('hidden');
         });

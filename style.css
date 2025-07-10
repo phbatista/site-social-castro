@@ -106,9 +106,6 @@ body {
     background-color: #dc2626; /* bg-red-600 */
 }
 
-/* ... (todos os estilos anteriores permanecem aqui) ... */
-
-/* NOVOS ESTILOS PARA INPUTS COM PREFIXO DE MOEDA */
 .input-group {
     position: relative;
 }
