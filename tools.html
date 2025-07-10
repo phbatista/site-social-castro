@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas Trabalhistas - Social Castro</title>
+    <meta name="description" content="Calcule aqui os valores de salário líquido, férias e 13º salário com nossas calculadoras trabalhistas.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/logo.png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Seu CSS externo -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Placeholder para o Cabeçalho -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section id="tools-menu" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Calculadoras Trabalhistas</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Calcule aqui os valores de salário, férias e 13º! Com nossas Calculadoras Trabalhistas você consegue fazer seus cálculos e tomar melhores decisões.</p>
+                </div>
+                <!-- Grade de Cards Informativos -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    
+                    <!-- Card Salário Líquido -->
+                    <a href="/ferramentas/salario-liquido.html" class="calculator-card-link">
+                        <div class="calculator-card">
+                            <h3 class="card-title">Cálculo de Salário Líquido</h3>
+                            <p class="card-description">Descubra o valor final do salário após os descontos de INSS, Imposto de Renda e outras deduções.</p>
+                            <span class="card-button">Calcular</span>
+                        </div>
+                    </a>
+
+                    <!-- Card Férias -->
+                    <a href="/ferramentas/ferias.html" class="calculator-card-link">
+                        <div class="calculator-card">
+                            <h3 class="card-title">Cálculo de Férias</h3>
+                            <p class="card-description">As férias são um período anual, remunerado e de até 30 dias, acrescido do bônus de 1/3 constitucional.</p>
+                            <span class="card-button">Calcular</span>
+                        </div>
+                    </a>
+
+                    <!-- Card 13º Salário -->
+                    <a href="/ferramentas/decimo-terceiro.html" class="calculator-card-link">
+                        <div class="calculator-card">
+                            <h3 class="card-title">Cálculo de 13º Salário</h3>
+                            <p class="card-description">Calcule o valor do 13º salário, também conhecido como gratificação natalina, proporcional aos meses trabalhados.</p>
+                            <span class="card-button">Calcular</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Placeholder para o Rodapé -->
+    <div id="footer-placeholder"></div>
+
+    <!-- O common.js agora carrega os componentes e inicializa o menu -->
+    <script src="/common.js" defer></script>
+</body>
+</html>

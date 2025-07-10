@@ -13,9 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Formatação de moeda para os inputs
     const formatInputAsCurrency = (input) => {
+        if (!input) return;
         input.addEventListener('keyup', (e) => {
             let value = e.target.value.replace(/\D/g, '');
-            value = (value / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+            if (value === '') {
+                e.target.value = '';
+                return;
+            }
+            value = (parseInt(value, 10) / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
             e.target.value = value;
         });
     };
@@ -49,18 +54,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const sellVacation = sellVacationSelect.value === 'sim';
             const advance13th = advance13thSelect.value === 'sim';
 
-            // 2. Cálculos
+            // 2. Cálculos precisos conforme a CLT
             const calculationBase = grossSalary + extraHours;
+            
+            // Valor dos dias de férias que serão gozados
             const vacationValue = (calculationBase / 30) * vacationDays;
-            const vacationBonus = vacationValue / 3;
+            
+            // O terço constitucional é sempre sobre o salário base completo
+            const vacationBonus = calculationBase / 3;
+            
+            // Total bruto das férias (base para cálculo de impostos)
             const grossVacation = vacationValue + vacationBonus;
 
             // Abono Pecuniário (venda de 1/3 das férias) é isento de impostos
             let cashBonus = 0;
             if (sellVacation) {
-                // O abono é 1/3 do salário + 1/3 sobre esse abono.
-                const bonusBase = calculationBase / 3;
-                cashBonus = bonusBase + (bonusBase / 3);
+                // O valor do abono é 1/3 do salário base.
+                cashBonus = calculationBase / 3;
             }
 
             // Adiantamento do 13º (também não incide impostos no adiantamento)
@@ -88,23 +98,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="text-lg font-bold text-red-600">${formatCurrency(calculationBase)}</p>
                     </div>
                     <div class="p-4 bg-white rounded-lg shadow-sm">
-                        <p class="font-semibold">2. Cálculo do Terço Constitucional</p>
-                        <p>${formatCurrency(vacationValue)} / 3 = <span class="text-lg font-bold text-red-600">${formatCurrency(vacationBonus)}</span></p>
+                        <p class="font-semibold">2. Férias Brutas</p>
+                        <p>Valor dos ${vacationDays} dias de férias: ${formatCurrency(vacationValue)}</p>
+                        <p>Terço Constitucional (1/3): ${formatCurrency(vacationBonus)}</p>
+                        <p class="font-bold">Total Bruto (Base para Impostos): <span class="text-lg font-bold text-red-600">${formatCurrency(grossVacation)}</span></p>
                     </div>
                     <div class="p-4 bg-white rounded-lg shadow-sm">
-                        <p class="font-semibold">3. Total Bruto das Férias (Valor das Férias + 1/3)</p>
-                        <p>${formatCurrency(vacationValue)} + ${formatCurrency(vacationBonus)} = <span class="text-lg font-bold text-red-600">${formatCurrency(grossVacation)}</span></p>
-                    </div>
-                    <div class="p-4 bg-white rounded-lg shadow-sm">
-                        <p class="font-semibold">4. Deduções (INSS e IRRF)</p>
+                        <p class="font-semibold">3. Deduções sobre Férias Brutas</p>
                         <p>INSS sobre Férias: ${formatCurrency(inss)}</p>
                         <p>IRRF sobre Férias: ${formatCurrency(irrf)}</p>
                         <p class="font-bold">Total de Descontos: <span class="text-lg font-bold text-red-600">${formatCurrency(totalDiscounts)}</span></p>
                     </div>
                      ${(sellVacation || advance13th) ? `
                         <div class="p-4 bg-white rounded-lg shadow-sm">
-                            <p class="font-semibold">5. Outros Vencimentos</p>
-                            ${sellVacation ? `<p>Abono Pecuniário: ${formatCurrency(cashBonus)}</p>` : ''}
+                            <p class="font-semibold">4. Outros Vencimentos (Isentos de Imposto)</p>
+                            ${sellVacation ? `<p>Abono Pecuniário (Venda 1/3): ${formatCurrency(cashBonus)}</p>` : ''}
                             ${advance13th ? `<p>Adiantamento 13º Salário: ${formatCurrency(advance13thValue)}</p>` : ''}
                         </div>
                     ` : ''}
@@ -114,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="text-xs mt-2 text-gray-500">(${formatCurrency(grossVacation)} - ${formatCurrency(totalDiscounts)} + ${formatCurrency(cashBonus + advance13thValue)})</p>
                     </div>
                 </div>
-                <p class="text-xs text-center mt-4 text-gray-500">Lembre-se que este resultado é uma estimativa e não substitui o holerite oficial.</p>
+                <p class="text-xs text-center mt-4 text-gray-500">Este resultado é uma estimativa e não substitui o holerite oficial. O cálculo do abono pecuniário (venda de 1/3) é isento de INSS e IRRF.</p>
             `;
             resultDiv.classList.remove('hidden');
         });

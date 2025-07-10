@@ -1,0 +1,35 @@
+<!-- Conteúdo do arquivo: _header.html -->
+<header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <!-- O link da logo agora aponta para a raiz do site -->
+        <a href="/index.html">
+            <!-- O caminho da imagem também aponta para a raiz -->
+            <img src="/logo.png" alt="Logo Social Castro" class="h-12">
+        </a>
+        <div class="hidden md:flex space-x-8 items-center">
+            <!-- Todos os links foram ajustados para caminhos absolutos -->
+            <a href="/index.html#services" class="text-gray-600 hover:text-red-600 nav-link">Soluções</a>
+            <a href="/tools.html" class="text-gray-600 hover:text-red-600 nav-link">Ferramentas</a>
+            <a href="/index.html#why-us" class="text-gray-600 hover:text-red-600 nav-link">Vantagens</a>
+            <a href="/index.html#testimonials" class="text-gray-600 hover:text-red-600 nav-link">Depoimentos</a>
+            <a href="/index.html#contact" class="text-gray-600 hover:text-red-600 nav-link">Contato</a>
+        </div>
+        <a href="/index.html#contact" class="hidden md:block bg-red-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+            Seja um Parceiro
+        </a>
+        <!-- Menu Mobile (Hambúrguer) -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </nav>
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white">
+        <a href="/index.html#services" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Soluções</a>
+        <a href="/tools.html" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Ferramentas</a>
+        <a href="/index.html#why-us" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Vantagens</a>
+        <a href="/index.html#testimonials" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Depoimentos</a>
+        <a href="/index.html#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Contato</a>
+    </div>
+</header>
