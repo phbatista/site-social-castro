@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const sellVacationSelect = document.getElementById('sell-vacation');
     const advance13thSelect = document.getElementById('advance-13th');
 
+    // Função para converter o valor do input de moeda para número
+    const parseCurrency = (value) => {
+        if (!value) return 0;
+        return parseFloat(value.replace(/\./g, '').replace(',', '.')) || 0;
+    };
+
     // Formatação de moeda para os inputs
     const formatInputAsCurrency = (input) => {
         if (!input) return;
@@ -46,8 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (calculateButton) {
         calculateButton.addEventListener('click', () => {
             // 1. Coleta e converte os valores dos inputs
-            const parseCurrency = (value) => parseFloat(value.replace(/\./g, '').replace(',', '.')) || 0;
             const grossSalary = parseCurrency(grossSalaryInput.value);
+            if (grossSalary === 0) {
+                alert('Por favor, insira um valor de salário bruto.');
+                return;
+            }
             const extraHours = parseCurrency(extraHoursInput.value);
             const dependents = parseInt(dependentsInput.value) || 0;
             const vacationDays = parseInt(vacationDaysInput.value) || 30;
@@ -56,36 +65,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 2. Cálculos precisos conforme a CLT
             const calculationBase = grossSalary + extraHours;
-            
-            // Valor dos dias de férias que serão gozados
             const vacationValue = (calculationBase / 30) * vacationDays;
-            
-            // O terço constitucional é sempre sobre o salário base completo
             const vacationBonus = calculationBase / 3;
-            
-            // Total bruto das férias (base para cálculo de impostos)
             const grossVacation = vacationValue + vacationBonus;
 
-            // Abono Pecuniário (venda de 1/3 das férias) é isento de impostos
             let cashBonus = 0;
             if (sellVacation) {
-                // O valor do abono é 1/3 do salário base.
                 cashBonus = calculationBase / 3;
             }
 
-            // Adiantamento do 13º (também não incide impostos no adiantamento)
             let advance13thValue = 0;
             if (advance13th) {
                 const currentMonth = new Date().getMonth() + 1;
                 advance13thValue = (calculationBase / 12 * currentMonth) / 2;
             }
 
-            // Descontos são calculados sobre o total bruto das férias
             const inss = calculateINSS(grossVacation);
             const irrf = calculateIRRF(grossVacation, dependents);
             const totalDiscounts = inss + irrf;
-
-            // Valor líquido
             const netVacation = grossVacation - totalDiscounts;
             const totalToReceive = netVacation + cashBonus + advance13thValue;
 
